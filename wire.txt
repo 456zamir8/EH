@@ -1,0 +1,7 @@
+filters for destination and source port:
+    tcp.dstport == <port_num>
+    tcp.srcport == 123
+
+filter ip by destination
+    ip.dst == <destination_ip>
+    ip.src == <source_ip>
