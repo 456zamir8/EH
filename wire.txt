@@ -9,3 +9,16 @@ filter ip by destination
 
 ' OR '1'='1--
 https://drive.google.com/file/d/1nSWtL0pR3ABj7iZFtPkDuA4VUdyOfFV8/view?usp=drive_link
+
+Set up ARP poisoning: Use tools like arpspoof, ettercap, or Bettercap to poison the ARP cache of the target machine and the gateway, making your machine the man-in-the-middle.
+
+Capture network traffic: While ARP poisoning is active, use a packet capture tool like Wireshark or tcpdump to capture the victim’s network traffic.
+
+Filter for email traffic: Depending on the email protocol used (POP3, IMAP, SMTP), filter the captured traffic for relevant ports (e.g., POP3: 110, IMAP: 143, SMTP: 25, or their SSL/TLS variants).
+
+Analyze captured data: If the email traffic is unencrypted, you may see the username and password in plaintext. If encrypted (e.g., using SSL/TLS), you will need to attempt SSL stripping or other advanced techniques, but these are often more complex and may not be feasible depending on the environment.
+
+Extract credentials: Use tools or manual inspection to extract the credentials from the captured packets.
+
+Keep in mind that modern email services mostly use encrypted connections (STARTTLS, SSL/TLS), so capturing plaintext passwords via ARP poisoning alone is often not possible without additional steps like SSL stripping or exploiting weak configurations.
+
